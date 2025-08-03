@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NTPC Timetable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2d3436;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .accordion {
+      max-width: 850px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .accordion-item {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 22px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .accordion-header::after {
+      content: '\25BC';
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-header.active::after {
+      transform: rotate(180deg);
+    }
+
+    /* Color-coded days */
+    .accordion-item.monday .accordion-header { background: #1abc9c; }
+    .accordion-item.tuesday .accordion-header { background: #3498db; }
+    .accordion-item.wednesday .accordion-header { background: #9b59b6; }
+    .accordion-item.thursday .accordion-header { background: #B0BC62; }
+    .accordion-item.friday .accordion-header { background: #58C0C6; }
+    .accordion-item.saturday .accordion-header { background: #34495e; }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      background: #f9f9f9;
+      padding: 0 22px;
+      transition: all 0.4s ease;
+    }
+
+    .accordion-body.open {
+      padding: 20px 22px;
+    }
+
+    .shift {
+      margin-bottom: 16px;
+    }
+
+    .shift b {
+      display: block;
+      margin-bottom: 5px;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    .time {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .names {
+      font-size: 14px;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 20px; }
+      .accordion-header { font-size: 14px; padding: 14px 18px; }
+      .accordion-body { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>NTPC Apprenticeship & Internship Work Duty Timetable</h2>
+
+  <div class="accordion">
+    <div class="accordion-item monday">
+      <div class="accordion-header">Monday</div>
+      <div class="accordion-body">
+        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Birkang Basumatary, Rockmon Ali</div></div>
+        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Nirjay Basumatary, Rashila Mushahary</div></div>
+      </div>
+    </div>
+
+    <div class="accordion-item tuesday">
+      <div class="accordion-header">Tuesday</div>
+      <div class="accordion-body">
+        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Ritu Narzary, Ambrit Basumatary</div></div>
+        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Rockmon Ali, Birkang Basumatary</div></div>
+      </div>
+    </div>
+
+    <div class="accordion-item wednesday">
+      <div class="accordion-header">Wednesday</div>
+      <div class="accordion-body">
+        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Birkang Basumatary, Nirjay Basumatary</div></div>
+        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Ritu Narzary, Ambrit Basumatary</div></div>
+      </div>
+    </div>
+
+    <div class="accordion-item thursday">
+      <div class="accordion-header">Thursday</div>
+      <div class="accordion-body">
+        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Rockmon Ali, Birkang Basumatary</div></div>
+        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Rockmon Ali, Nirjay Basumatary</div></div>
+      </div>
+    </div>
+
+    <div class="accordion-item friday">
+      <div class="accordion-header">Friday</div>
+      <div class="accordion-body">
+        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Ritu Narzary, Rashila Mushahary</div></div>
+        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Ritu Narzary, Ambrit Basumatary</div></div>
+      </div>
+    </div>
+
+    <div class="accordion-item saturday">
+      <div class="accordion-header">Saturday</div>
+      <div class="accordion-body">
+        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Ritu Narzary, Ambrit Basumatary</div></div>
+        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Nirjay Basumatary, Rockmon Ali</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const headers = document.querySelectorAll(".accordion-header");
+
+    headers.forEach(header => {
+      header.addEventListener("click", () => {
+        const isActive = header.classList.contains("active");
+
+        document.querySelectorAll(".accordion-header").forEach(h => h.classList.remove("active"));
+        document.querySelectorAll(".accordion-body").forEach(body => {
+          body.classList.remove("open");
+          body.style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          header.classList.add("active");
+          const body = header.nextElementSibling;
+          body.classList.add("open");
+          body.style.maxHeight = body.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
