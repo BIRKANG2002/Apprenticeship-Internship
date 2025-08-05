@@ -51,6 +51,50 @@
         opacity: 1;
       }
     }
+.custom-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.custom-heading .icon {
+  font-size: 34px;
+  color: #3498db;
+  animation: bounce 1s infinite alternate;
+}
+
+.custom-heading .text {
+  font-size: 22px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #1abc9c, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.custom-heading .text::after {
+  content: '';
+  display: block;
+  margin: 8px auto 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #1abc9c, #3498db, #9b59b6);
+  border-radius: 2px;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+
+
+
 
     .accordion {
       max-width: 850px;
@@ -143,13 +187,57 @@
       .accordion-header { font-size: 14px; padding: 14px 18px; }
       .accordion-body { font-size: 14px; }
     }
+    .heading-wrapper {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 10px;
+}
+
+.logo-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.ntpc-logo {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+.text-area h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(to right, #1abc9c, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-area p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 5px 0 0;
+  color: #2d3436;
+}
+
   </style>
 </head>
 <body>
 
   <div class="heading-wrapper">
-    <h2 class="underline-heading">MM Offsite Department Apprenticeship & Internship Work Duty Timetable</h2>
+  <div class="logo-heading">
+    <img src="NTPC Limited.png" alt="NTPC Logo" class="ntpc-logo" />
+    <div class="text-area">
+      <h2>MM Offsite Department</h2>
+      <p>Apprenticeship & Internship Work Duty Timetable</p>
+    </div>
   </div>
+</div>
+
+
 
   <div class="accordion">
 
