@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NTPC Timetable</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -13,12 +15,41 @@
       padding: 40px 20px;
     }
 
-    h2 {
+    .heading-wrapper {
       text-align: center;
-      color: #2d3436;
-      font-weight: 600;
       margin-bottom: 30px;
+    }
+
+    .underline-heading {
+      position: relative;
+      display: inline-block;
       font-size: 24px;
+      font-weight: 600;
+      color: #2d3436;
+    }
+
+    .underline-heading::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #1abc9c, #3498db, #9b59b6);
+      border-radius: 2px;
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+      to {
+        width: 80px;
+        opacity: 1;
+      }
     }
 
     .accordion {
@@ -49,6 +80,10 @@
       transition: 0.3s;
     }
 
+    .accordion-header i {
+      margin-right: 10px;
+    }
+
     .accordion-header::after {
       content: '\25BC';
       font-size: 16px;
@@ -59,7 +94,6 @@
       transform: rotate(180deg);
     }
 
-    /* Color-coded days */
     .accordion-item.monday .accordion-header { background: #1abc9c; }
     .accordion-item.tuesday .accordion-header { background: #3498db; }
     .accordion-item.wednesday .accordion-header { background: #9b59b6; }
@@ -90,18 +124,22 @@
       font-weight: 600;
     }
 
-    .time {
-      font-size: 14px;
-      color: #555;
-    }
-
+    .time,
     .names {
       font-size: 14px;
-      color: #333;
+      color: #555;
+      margin-left: 18px;
+    }
+
+    .time i,
+    .names i,
+    .shift b i {
+      margin-right: 6px;
+      color: #3498db;
     }
 
     @media (max-width: 600px) {
-      h2 { font-size: 20px; }
+      .underline-heading { font-size: 20px; }
       .accordion-header { font-size: 14px; padding: 14px 18px; }
       .accordion-body { font-size: 14px; }
     }
@@ -109,56 +147,108 @@
 </head>
 <body>
 
-  <h2>MM Offsite Department Apprenticeship & Internship Work Duty Timetable</h2>
+  <div class="heading-wrapper">
+    <h2 class="underline-heading">MM Offsite Department Apprenticeship & Internship Work Duty Timetable</h2>
+  </div>
 
   <div class="accordion">
+
     <div class="accordion-item monday">
-      <div class="accordion-header">Monday</div>
+      <div class="accordion-header"><i class="fa-regular fa-calendar-days"></i> Monday</div>
       <div class="accordion-body">
-        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Birkang Basumatary, Rockmon Ali</div></div>
-        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Nirjay Basumatary, Rashila Mushahary</div></div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Morning Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 10:00 AM – 1:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Birkang Basumatary, Rockmon Ali</div>
+        </div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Evening Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 3:00 PM – 5:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Nirjay Basumatary, Rashila Mushahary</div>
+        </div>
       </div>
     </div>
 
     <div class="accordion-item tuesday">
-      <div class="accordion-header">Tuesday</div>
+      <div class="accordion-header"><i class="fa-regular fa-calendar-days"></i> Tuesday</div>
       <div class="accordion-body">
-        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Ritu Narzary, Ambrit Basumatary</div></div>
-        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Rockmon Ali, Birkang Basumatary</div></div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Morning Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 10:00 AM – 1:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Ritu Narzary, Ambrit Basumatary</div>
+        </div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Evening Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 3:00 PM – 5:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Rockmon Ali, Birkang Basumatary</div>
+        </div>
       </div>
     </div>
 
     <div class="accordion-item wednesday">
-      <div class="accordion-header">Wednesday</div>
+      <div class="accordion-header"><i class="fa-regular fa-calendar-days"></i> Wednesday</div>
       <div class="accordion-body">
-        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Birkang Basumatary, Nirjay Basumatary</div></div>
-        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Ritu Narzary, Ambrit Basumatary</div></div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Morning Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 10:00 AM – 1:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Birkang Basumatary, Nirjay Basumatary</div>
+        </div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Evening Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 3:00 PM – 5:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Ritu Narzary, Ambrit Basumatary</div>
+        </div>
       </div>
     </div>
 
     <div class="accordion-item thursday">
-      <div class="accordion-header">Thursday</div>
+      <div class="accordion-header"><i class="fa-regular fa-calendar-days"></i> Thursday</div>
       <div class="accordion-body">
-        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Rockmon Ali, Birkang Basumatary</div></div>
-        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Rockmon Ali, Nirjay Basumatary</div></div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Morning Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 10:00 AM – 1:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Rockmon Ali, Birkang Basumatary</div>
+        </div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Evening Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 3:00 PM – 5:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Rockmon Ali, Nirjay Basumatary</div>
+        </div>
       </div>
     </div>
 
     <div class="accordion-item friday">
-      <div class="accordion-header">Friday</div>
+      <div class="accordion-header"><i class="fa-regular fa-calendar-days"></i> Friday</div>
       <div class="accordion-body">
-        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Ritu Narzary, Rashila Mushahary</div></div>
-        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Ritu Narzary, Ambrit Basumatary</div></div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Morning Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 10:00 AM – 1:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Ritu Narzary, Rashila Mushahary</div>
+        </div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Evening Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 3:00 PM – 5:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Ritu Narzary, Ambrit Basumatary</div>
+        </div>
       </div>
     </div>
 
     <div class="accordion-item saturday">
-      <div class="accordion-header">Saturday</div>
+      <div class="accordion-header"><i class="fa-regular fa-calendar-days"></i> Saturday</div>
       <div class="accordion-body">
-        <div class="shift"><b>Morning Shift</b><div class="time">10:00 AM – 1:00 PM</div><div class="names">Ritu Narzary, Ambrit Basumatary</div></div>
-        <div class="shift"><b>Evening Shift</b><div class="time">3:00 PM – 5:00 PM</div><div class="names">Nirjay Basumatary, Rockmon Ali</div></div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Morning Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 10:00 AM – 1:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Ritu Narzary, Ambrit Basumatary</div>
+        </div>
+        <div class="shift">
+          <b><i class="fa-solid fa-briefcase"></i> Evening Shift</b>
+          <div class="time"><i class="fa-regular fa-clock"></i> 3:00 PM – 5:00 PM</div>
+          <div class="names"><i class="fa-regular fa-user"></i> Nirjay Basumatary, Rockmon Ali</div>
+        </div>
       </div>
     </div>
+
   </div>
 
   <script>
@@ -186,4 +276,3 @@
 
 </body>
 </html>
-
